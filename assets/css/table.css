@@ -2,6 +2,12 @@ th{
 	font-size:24px !important;
 }
 
+.tblContestHeader{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size:44px;
+	padding-bottom:17px;
+}
+
 .tblContest{
 	
 }
@@ -26,3 +32,10 @@ th{
 .tblContestEnds{
 	font-size:18px;
 }
+
+.tblClock{
+	font-size:24px;
+	font-weight:bold;
+}
+
+

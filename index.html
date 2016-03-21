@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
     <head>
@@ -16,8 +15,9 @@
         <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="assets/css/buttons.css">
         <link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/table.css">
         <link rel="stylesheet" href="assets/css/media-queries.css">
-
+		<link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700,400' rel='stylesheet' type='text/css'>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -50,14 +50,68 @@
                             <!--<h1>Teris App is now ready. <br>Go get it!</h1>-->
                             <h1><img src="assets/img/logo.png"/></h1>
                             <div class="description">
-								<p>UGoFor is a simple social media app focused on the foods you love and crave. Through a simple interface, users can post some of their foods and post their cravings. 
-								Friends can respond to your cravings and make suggestions based on your location.<p>
-
-								<p>UGoFor also analyses your posts and makes automatic predictions on food you may crave through notifications!</p>
-
-								<p>Would could <strong>U</strong> Go For? Share your favorite foods or let your friends help you decide. </p>
-
-								Check it out!
+								<div class="tblContestHeader"><span style="font-weight:400;">U<span style="font-weight:700">Snap</span> Challenge</span></div>
+								<table class="tblContest">
+								  <tr>
+									<th colspan="2">AM Coffee Challenge</th>
+								  </tr>
+								  <tr>
+									<td rowspan="2" class="tblContestImg"><img src='assets/img/coffee.png'/></td>
+									<td class="tblContestRating">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+								  </tr>
+								  <tr>
+									<td class="tblContestDesc">
+									Post photos of your favorite caffeinated beverage between 6am-10am, any day of the week. Photos creatively displaying the UGoFor logo will be given a slight edge over the competition :)
+									Good luck!
+									</td>
+								  </tr>
+								  <tr>
+									<td colspan="2" class="tblContestPrize"><strong>Prize: $5 Starbucks Card</strong></td>
+								  </tr>
+								  <tr>
+									<td colspan="2" class="tblContestEnds"><strong>Ends: </strong><span class="tblClock"></span></td>
+								  </tr>
+								  <!--
+								  <tr>
+									<td colspan="2"><hr/></td>
+								  </tr>
+								  <tr>
+									<th colspan="2">Chicken Challenge</th>
+								  </tr>
+								  <tr>
+									<td rowspan="2" class="tblContestImg"><img src='assets/img/chicken.png'/></td>
+									<td class="tblContestRating">&#9733;&#9733;&#9733;</td>
+								  </tr>
+								  <tr>
+									<td class="tblContestDesc">Post pictures of your favorite caffeinated beverage between 6am-9am. Post pictures of your favorite caffeinated beverage between 6am-9am.</td>
+								  </tr>
+								  <tr>
+									<td colspan="2" class="tblContestPrize"><strong>Prize: </strong>Free Coffee Card</td>
+								  </tr>
+								  <tr>
+									<td colspan="2" class="tblContestEnds"><strong>Ends: </strong>00:00:00</td>
+								  </tr>
+								  <tr>
+									<td colspan="2"><hr/></td>
+								  </tr>
+								  <tr>
+									<th colspan="2">Food Truck Challenge</th>
+								  </tr>
+								  <tr>
+									<td rowspan="2" class="tblContestImg"><img src='assets/img/food-truck.png'/></td>
+									<td class="tblContestRating">&#9733;&#9733;&#9733;</td>
+								  </tr>
+								  <tr>
+									<td class="tblContestDesc">Post pictures of your favorite caffeinated beverage between 6am-9am. Post pictures of your favorite caffeinated beverage between 6am-9am.</td>
+								  </tr>
+								  <tr>
+									<td colspan="2" class="tblContestPrize"><strong>Prize: </strong>Free Coffee Card</td>
+								  </tr>
+								  <tr>
+									<td colspan="2" class="tblContestEnds"><strong>Ends: </strong>00:00:00</td>
+								  </tr>	
+								  -->
+								</table>
                             </div>
                             <div class="top-button">
                             	<a class="button-1" href="https://itunes.apple.com/us/app/ugofor/id1086117994?ls=1&mt=8">
@@ -78,6 +132,16 @@
         <script src="assets/js/jquery-1.10.2.min.js"></script>
         <script src="assets/js/jquery.backstretch.min.js"></script>
         <script src="assets/js/retina-1.1.0.min.js"></script>
+		<script src="assets/js/jquery.countdown.min.js"></script>
+		<script type="text/javascript">
+		$(function(){
+			var d = new Date();
+			d.setTime(1459483200*1000); // from: 04/01/2016 12:00 am -0400
+			$('.tblClock').countdown(d, function(event) {
+				$(this).html(event.strftime('%D days %H:%M:%S'));
+			});
+		});
+		</script>
         <!-- <script src="assets/js/scripts.js"></script> -->
 
     </body>
