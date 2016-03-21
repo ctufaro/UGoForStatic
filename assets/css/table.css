@@ -1,0 +1,28 @@
+th{
+	font-size:24px !important;
+}
+
+.tblContest{
+	
+}
+
+.tblContestImg{
+	min-width:80px;
+}
+
+.tblContestRating{
+	color:#F79621;	
+}
+
+.tblContestDesc{
+	font-size:16px;
+	line-height:2.2rem;
+}
+
+.tblContestPrize{
+	font-size:18px;
+}
+
+.tblContestEnds{
+	font-size:18px;
+}
