@@ -69,48 +69,27 @@
 									<td colspan="2" class="tblContestPrize"><strong>Prize: $5 Starbucks e-Gift Card</strong></td>
 								  </tr>
 								  <tr>
-									<td colspan="2" class="tblContestEnds"><strong>Ends: </strong><span class="tblClock"></span></td>
-								  </tr>
-								  <!--
+									<td colspan="2" class="tblContestEnds"><strong>Ends: </strong><span class="tblClock clock1"></span></td>
+								  </tr>								  
 								  <tr>
 									<td colspan="2"><hr/></td>
 								  </tr>
 								  <tr>
-									<th colspan="2">Chicken Challenge</th>
+									<th colspan="2">Guilty Pleasure Challenge</th>
 								  </tr>
 								  <tr>
-									<td rowspan="2" class="tblContestImg"><img src='assets/img/chicken.png'/></td>
-									<td class="tblContestRating">&#9733;&#9733;&#9733;</td>
+									<td rowspan="2" class="tblContestImg"><img src='assets/img/fast-food.png'/></td>
+									<td class="tblContestRating">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
 								  </tr>
 								  <tr>
-									<td class="tblContestDesc">Post pictures of your favorite caffeinated beverage between 6am-9am. Post pictures of your favorite caffeinated beverage between 6am-9am.</td>
+									<td class="tblContestDesc">Post pictures of your cheat meal, the food that invokes so much guilt, yet soooo much pleasure. As always, a UGoFor logo somewhere in the pic only helps...just saying.</td>
 								  </tr>
 								  <tr>
-									<td colspan="2" class="tblContestPrize"><strong>Prize: </strong>Free Coffee Card</td>
+									<td colspan="2" class="tblContestPrize"><strong>Prize: $20 Fast Food e-Gift Card</strong></td>
 								  </tr>
 								  <tr>
-									<td colspan="2" class="tblContestEnds"><strong>Ends: </strong>00:00:00</td>
-								  </tr>
-								  <tr>
-									<td colspan="2"><hr/></td>
-								  </tr>
-								  <tr>
-									<th colspan="2">Food Truck Challenge</th>
-								  </tr>
-								  <tr>
-									<td rowspan="2" class="tblContestImg"><img src='assets/img/food-truck.png'/></td>
-									<td class="tblContestRating">&#9733;&#9733;&#9733;</td>
-								  </tr>
-								  <tr>
-									<td class="tblContestDesc">Post pictures of your favorite caffeinated beverage between 6am-9am. Post pictures of your favorite caffeinated beverage between 6am-9am.</td>
-								  </tr>
-								  <tr>
-									<td colspan="2" class="tblContestPrize"><strong>Prize: </strong>Free Coffee Card</td>
-								  </tr>
-								  <tr>
-									<td colspan="2" class="tblContestEnds"><strong>Ends: </strong>00:00:00</td>
-								  </tr>	
-								  -->
+									<td colspan="2" class="tblContestEnds"><strong>Ends: </strong><span class="tblClock clock2"></span></td>
+								  </tr>								  
 								</table>
                             </div>
                             <div class="top-button">
@@ -129,6 +108,7 @@
         </div>
                 
         <!-- Javascript -->
+		<!-- http://www.dwuser.com/education/content/easy-javascript-jquery-countdown-clock-builder/ -->
         <script src="assets/js/jquery-1.10.2.min.js"></script>
         <script src="assets/js/jquery.backstretch.min.js"></script>
         <script src="assets/js/retina-1.1.0.min.js"></script>
@@ -137,7 +117,13 @@
 		$(function(){
 			var d = new Date();
 			d.setTime(1459742400*1000); // from: 04/01/2016 12:00 am -0400
-			$('.tblClock').countdown(d, function(event) {
+			$('.clock1').countdown(d, function(event) {
+				$(this).html(event.strftime('%D days %H:%M:%S'));
+			});
+			
+			var e = new Date();
+			e.setTime(1459928800*1000); // from: 04/01/2016 12:00 am -0400
+			$('.clock2').countdown(e, function(event) {
 				$(this).html(event.strftime('%D days %H:%M:%S'));
 			});
 		});
