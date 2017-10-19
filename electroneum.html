@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <img src='https://electroneum.com/wp-content/uploads/2017/07/logo-color.png' style="width:30%; padding-left:10px;" />
+    <div style="padding-top:0px;padding-left:10px;padding-right:10px;">
+        <table class="table table-bordered table-striped table-condensed table-responsive">
+            <thead>
+                <tr>
+                    <th>
+                        Users
+                    </th>
+                    <th>
+                        Coins Sold
+                    </th>
+                    <th>
+                        Money Raised
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="users">
+                    </td>
+                    <td id="coinsSold">
+                    </td>
+                    <td id="moneyRaised">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+		<button type="button" class="btn btn-primary btn-lg btn-block" id="myButt">Update Stats</button>
+    </div>
+
+</body>
+<script>
+    $("#myButt").click(function() {
+        populateCurrency();
+    });
+
+    function getMoney(obj, btc, eth) {
+        return (parseFloat(obj['ethereumRaised']) * eth) + (parseFloat(obj['bitcoinRaised']) * btc);
+    }
+
+    function format2(n, currency) {
+        return currency + " " + n.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,");
+    }
+
+    function populateElectroneum(btc, eth) {
+        $.get("https://my.electroneum.com/api/stats", function(data) {
+            var obj = $.parseJSON(data);
+            $("#users").html(format2(parseFloat(obj['registeredUsers']), ''));
+            $("#coinsSold").html(format2(parseFloat(obj['electroneumSold']), ''));
+            $("#moneyRaised").html(format2(getMoney(obj, btc, eth), '$'));
+        });
+    }
+
+    function populateCurrency() {
+        $.get("https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH&tsyms=USD,EUR", function(data) {
+            btc = 0;
+            eth = 0;
+            $.each(data, function(i, object) {
+                $.each(object, function(property, value) {
+                    if (i === 'BTC' && property === 'USD') {
+                        //console.log("BITCOIN IN USD: " + value);
+                        btc = value;
+                    }
+                    if (i === 'ETH' && property === 'USD') {
+                        //console.log("ETHEREUM IN USD: " + value);
+                        eth = value;
+                    }
+                });
+            });
+            populateElectroneum(parseFloat(btc), parseFloat(eth));
+        });
+    }
+</script>
+
+</html>
