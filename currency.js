@@ -1,4 +1,4 @@
-! function() {
+﻿! function() {
 	
 	totalPort = 0;
 	
@@ -80,7 +80,7 @@
 			
 			/**ADD TICKERS HERE**/			
 			if(r=='ETN'){
-				stash = 202000;
+				stash = 202244;
 			}
 			else if (r=='GRX'){
 				stash = 1215;
