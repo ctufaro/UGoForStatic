@@ -82,7 +82,7 @@
 			/**ADD TICKERS HERE**/			
 			if(r=='ETN'){
 				stash = 202244;
-				imgNum = 2137;
+				imgNum = 'electroneum';
 			}
 			else if (r=='GRX'){
 				stash = 1215;
@@ -98,7 +98,7 @@
 			}
 			else if (r=='TOMO'){
 				stash = 818.4598;
-				imgNum = 2570;
+				imgNum = 'tomochain';
 			}			
 			
             p < 0 && (b = "#d14836"), valTickerHTML = m ? "(" + r + ")" : "", valPrice = s ? e(s, n) : "?", valPercentHTML = p ? '<span style="color:' + b + '">(' + p + "%)" : "", valMarketCap = u ? t(u, 2) : "?", valVolume = h ? t(h, 2) : "?", c ? (mainLineHeight = 25, valPriceSecondary = l ? e(l, c) : "?", secondaryHTML = '<br><span style="font-size: 14px; color:gray">PROFIT ' + valPriceSecondary * stash + " " + c + " </span>") : (mainLineHeight = 30, secondaryHTML = "");
@@ -106,7 +106,7 @@
 			totalPort += valPriceSecondary * stash;
 			
             var w = "utm_medium=widget&utm_campaign=cmcwidget&utm_source=" + location.hostname + "&utm_content=" + a,
-                k = '<div style="border:2px solid #E4E6EB;border-radius: 10px;font-family: \'Helvetica Neue\',Helvetica,Arial,sans-serif;min-width:285px;">    <div>        <div style="float:right;width:67%;border: 0px solid #000;text-align:left;padding:5px 0px;line-height:' + mainLineHeight + 'px;">            <span style="font-size: 18px;"><a href="http://coinmarketcap.com/currencies/' + a + "/?" + w + '" target="_blank">' + i + " " + valTickerHTML + '</a></span> <br>            <span style="font-size: 16px;">' + valPrice + " " + n + " " + valPercentHTML + "</span></span>            " + secondaryHTML + '        </div>        <div style="text-align:center;padding:5px 0px;width:33%;"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/' + imgNum + '.png"></div>    </div>';
+                k = '<div style="border:2px solid #E4E6EB;border-radius: 10px;font-family: \'Helvetica Neue\',Helvetica,Arial,sans-serif;min-width:285px;">    <div>        <div style="float:right;width:67%;border: 0px solid #000;text-align:left;padding:5px 0px;line-height:' + mainLineHeight + 'px;">            <span style="font-size: 18px;"><a href="http://coinmarketcap.com/currencies/' + a + "/?" + w + '" target="_blank">' + i + " " + valTickerHTML + '</a></span> <br>            <span style="font-size: 16px;">' + valPrice + " " + n + " " + valPercentHTML + "</span></span>            " + secondaryHTML + '        </div>        <div style="text-align:center;padding:5px 0px;width:33%;"><img src="images/' + imgNum + '.png"></div>    </div>';
             return k += o(v, g, x, y, d, f, valMarketCap, valVolume)
 			//return k += o(v, g, x, y, d, f, valMarketCap, valVolume), k += '    <div style="border-top: 1px solid #E4E6EB;text-align:center;clear:both;font-size:10px;font-style:italic;padding:5px //0;">        <a href="http://coinmarketcap.com?' + w + '" target="_blank">Powered by CoinMarketCap</a>    </div></div>'
         }
