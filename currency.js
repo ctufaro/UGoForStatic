@@ -78,10 +78,10 @@
             var b = "#093";
 			var stash = 0;
 			var imgNum;
-			
+			console.log(r);
 			/**ADD TICKERS HERE**/			
 			if(r=='ETN'){
-				stash = 202244;
+				stash = 243.97;
 				imgNum = 'electroneum';
 			}
 			else if (r=='GRX'){
@@ -99,6 +99,10 @@
 			else if (r=='TOMO'){
 				stash = 818.4598;
 				imgNum = 'tomochain';
+			}
+			else if (r=='USDT'){
+				stash = 5318.33428767;
+				imgNum = 'tether';
 			}			
 			
             p < 0 && (b = "#d14836"), valTickerHTML = m ? "(" + r + ")" : "", valPrice = s ? e(s, n) : "?", valPercentHTML = p ? '<span style="color:' + b + '">(' + p + "%)" : "", valMarketCap = u ? t(u, 2) : "?", valVolume = h ? t(h, 2) : "?", c ? (mainLineHeight = 25, valPriceSecondary = l ? e(l, c) : "?", secondaryHTML = '<br><span style="font-size: 14px; color:gray">PROFIT ' + valPriceSecondary * stash + " " + c + " </span>") : (mainLineHeight = 30, secondaryHTML = "");
