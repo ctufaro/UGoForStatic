@@ -81,7 +81,7 @@
 			console.log(r);
 			/**ADD TICKERS HERE**/			
 			if(r=='ETN'){
-				stash = 243.97;
+				stash = 153096.42;
 				imgNum = 'electroneum';
 			}
 			else if (r=='GRX'){
