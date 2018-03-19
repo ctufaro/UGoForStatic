@@ -94,7 +94,8 @@
 				stash = 20;
 			}
 			else if (r=='ETH'){
-				stash = .00637956;
+				stash = 9.64249715;
+				imgNum = 'ethereum';
 			}
 			else if (r=='TOMO'){
 				stash = 818.4598;
