@@ -81,7 +81,7 @@
 			console.log(r);
 			/**ADD TICKERS HERE**/			
 			if(r=='ETN'){
-				stash = 153096.42;
+				stash = 202917.07;
 				imgNum = 'electroneum';
 			}
 			else if (r=='GRX'){
@@ -98,7 +98,7 @@
 				imgNum = 'ethereum';
 			}
 			else if (r=='TOMO'){
-				stash = 818.4598;
+				stash = 1012.396048150815150212 ;
 				imgNum = 'tomochain';
 			}
 			else if (r=='USDT'){
