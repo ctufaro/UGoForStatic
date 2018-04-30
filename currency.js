@@ -98,7 +98,7 @@
 				imgNum = 'ethereum';
 			}
 			else if (r=='TOMO'){
-				stash = 1012.396048150815150212 ;
+				stash = 1248.368525040288635024;
 				imgNum = 'tomochain';
 			}
 			else if (r=='USDT'){
