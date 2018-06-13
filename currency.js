@@ -88,7 +88,8 @@
 				stash = 1215;
 			}
 			else if (r=='BTC'){
-				stash = .08971484;
+				stash = 0;
+				imgNum = 'bitcoin';
 			}	
 			else if (r=='XRP'){
 				stash = 20;
