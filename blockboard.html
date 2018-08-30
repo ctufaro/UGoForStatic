@@ -1,27 +1,67 @@
-﻿<!DOCTYPE HTML>
+﻿<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">   
 
-<html>
-<head>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>  
-</head>
+    <title>Block Board!</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/blockstyle.css" rel="stylesheet">
+  </head>
 
-<body>
-    <div id="sse">
-        <a href="javascript:WebSocketTest()">Connect To WebSocket</a><br />
-        <input id="txtToSend" type="text" />
-        <button id="btnSend">Send Data</button>
-        <div id="messages"></div>
-    </div>
-    <script type="text/javascript">
+  <body>
+
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#"></a><img src="images/logo.png" class="logo">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+          </ul>
+          <span class="form-inline mt-2 mt-md-0">
+            <!--<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0 blockbtn" type="submit">Say it</button>
+			<button class="btn btn-outline-success my-2 my-sm-0 blockbtn" type="submit">Connect</button>-->
+			<a href="javascript:WebSocketTest()">Connect To WebSocket</a><br />
+			<input id="txtToSend" type="text" />
+			<button id="btnSend">Send Data</button>			
+          </span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="container" id="messages">
+      <!--<h3 class="mt-5"><span class="i-circle">Chris Tufaro</span><br> Sticky footer with fixed navbar</h3>
+      <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS</p>
+	  
+      <h3 class="mt-5"><span class="i-circle">Chris</span><br> Sticky footer with fixed navbar</h3>
+      <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS</p>
+
+	  <h3 class="mt-5"><span class="i-circle">CT</span><br> Sticky footer with fixed navbar</h3>
+      <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS</p>	  
+
+	  <h3 class="mt-5"><span class="i-circle">C</span><br> Sticky footer with fixed navbar</h3>
+      <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS</p>-->
+	  
+    </main>
+   <script type="text/javascript">
 
         function WebSocketTest() {
             var index = -1;
 
             if ("WebSocket" in window) {
-                //alert("WebSocket is supported by your Browser!");;
+                //alert("WebSocket is supported by your Browser!");
 
                 // Let us open a web socket
-                var ws = new WebSocket("ws://mercer.sytes.net:5001/echo");
+                var ws = new WebSocket("ws://192.168.1.5:5001/echo");
                 $("#btnSend").css("background-color", "green");
 
                 ws.onopen = function () {
@@ -39,9 +79,9 @@
                     var block = JSON.parse(evt.data);
                     if (parseInt(block.Index) > index) {
                         index = parseInt(block.Index);
-                        $("#messages").append(evt.data + "<br>")
+						var htmlString = "<h3 class='mt-5'><span class='i-circle'>"+block.Poster+"</span><br>"+block.Post+"</h3><p class='lead'>"+evt.data+"</p>";
+                        $("#messages").append(htmlString)
                     }
-                    console.log(block);
                     //alert("Message is received...");
                 };
 
@@ -62,6 +102,6 @@
         }
 
         Init();
-    </script>
-</body>
+    </script>	
+  </body>
 </html>
