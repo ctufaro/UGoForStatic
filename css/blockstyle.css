@@ -37,27 +37,41 @@ code {
 }
 
 .mt-5, .my-5 {
-    margin-top: 1rem!important;
-}
-
-.btn-outline-success {
-    color: #28a745!important;
-    border-color: #28a745!important;
+    margin-top: 1.5rem!important;
+	font-family: 'Anton', sans-serif !important;
 }
 
 .logo{
-	padding-top:5px;
-	padding-bottom:5px;
+	font-family: 'Anton', sans-serif;
+	color:White;
+	font-size:32px;
+}
+
+.btn{
+	font-family: 'Anton', sans-serif !important;
+}
+
+.stat{
+	font-family: 'Anton', sans-serif;
+	color:White;
+	font-size:32px;
+	padding-left:10px;
 }
 
 .i-circle {
-    background: #ff0000;
+    background: #428bca;
     color: #fff;
     padding: 2px 7px 2px 7px;
     border-radius: 5%;
     font-size: 15px;
+	font-family: Tahoma !important;
 }
 
-.blockbtn{
-	margin-left:10px!important;
+.lead{
+	font-size:16px!important;
+	font-family: 'Oswald', sans-serif;
+}
+
+.divpad{
+	padding-bottom:5px;
 }
