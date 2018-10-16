@@ -78,7 +78,7 @@
             var b = "#093";
 			var stash = 0;
 			var imgNum;
-			console.log(r);
+			//console.log(r);
 			/**ADD TICKERS HERE**/			
 			if(r=='ETN'){
 				stash = 210004.15;
